@@ -10,7 +10,9 @@ import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 const HomeCakeShop = lazy(() => import("./pages/home/HomeCakeShop"));
 const Product = lazy(() => import("./pages/shop-product/Product"));
 const ShopGridStandard = lazy(() => import("./pages/shop/ShopGridStandard"));
-// other pages
+
+const LoginRegister = lazy( () => import( "./pages/other/LoginRegister" ) );
+
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
 const App = (props) => {
@@ -57,6 +59,13 @@ const App = (props) => {
                     <Product {...routeProps} key={routeProps.match.params.id} />
                   )}
                 />
+
+<Route
+									path={ process.env.PUBLIC_URL + "/auth/:type" }
+									component={ LoginRegister }
+								/>
+
+         
 
                 <Route
                   path={process.env.PUBLIC_URL + "/not-found"}

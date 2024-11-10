@@ -12,11 +12,11 @@ export const RegisterForm = (props) => {
 	const [genderConfig, setGenderConfig] = useState([
 		{
 			value: '0',
-			label: 'Male'
+			label: 'Duy'
 		},
 		{
 			value: '1',
-			label: 'Female'
+			label: 'Duy 3'
 		},
 		{
 			value: '2',
@@ -27,7 +27,7 @@ export const RegisterForm = (props) => {
 	const dispatch = useDispatch();
 	const submitForm = async (e) => {
 		if (e.password?.trim() !== e.password_confirmation?.trim()) {
-			message.error('Password does not match');
+			message.error('Password does not');
 		}
 		dispatch(toggleShowLoading(true));
 		const result = await Auth_Service.register({ ...e, type: 2 });
