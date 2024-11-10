@@ -9,7 +9,7 @@ import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const HomeCakeShop = lazy(() => import("./pages/home/HomeCakeShop"));
-
+const Product = lazy(() => import("./pages/shop-product/Product"));
 // other pages
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
@@ -50,6 +50,8 @@ const App = (props) => {
                 {/* Homepages */}
 
                 <Route path={"/home"} component={HomeCakeShop} />
+
+                <Route path={"/shop"} component={Product} />
 
                 <Route
                   path={process.env.PUBLIC_URL + "/not-found"}
