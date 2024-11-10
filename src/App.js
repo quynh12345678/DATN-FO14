@@ -8,7 +8,8 @@ import { connect } from "react-redux";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 
 const HomeCakeShop = lazy(() => import("./pages/home/HomeCakeShop"));
-
+const Product = lazy(() => import("./pages/shop-product/Product"));
+const ShopGridStandard = lazy(() => import("./pages/shop/ShopGridStandard"));
 // other pages
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
@@ -49,6 +50,13 @@ const App = (props) => {
                 {/* Homepages */}
 
                 <Route path={"/home"} component={HomeCakeShop} />
+                <Route path={"/shop"} component={ShopGridStandard} />
+                <Route
+                  path={process.env.PUBLIC_URL + "/product/:id"}
+                  render={(routeProps) => (
+                    <Product {...routeProps} key={routeProps.match.params.id} />
+                  )}
+                />
 
                 <Route
                   path={process.env.PUBLIC_URL + "/not-found"}
