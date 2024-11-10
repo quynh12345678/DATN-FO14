@@ -6,7 +6,6 @@ import { ToastProvider } from "react-toast-notifications";
 import { multilanguage, loadLanguages } from "redux-multilanguage";
 import { connect } from "react-redux";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const HomeCakeShop = lazy(() => import("./pages/home/HomeCakeShop"));
 
